@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Symptom, Problem, DiagnosisResult, VehicleInfo } from './types';
+import { useState, useEffect } from 'react';
+import { DiagnosisResult, VehicleInfo } from './types';
 import { symptoms } from './data/symptoms';
 import { problems } from './data/problems';
 import { DiagnosisEngine } from './utils/diagnosisEngine';
@@ -64,7 +64,7 @@ function App() {
 
   const handleAIChat = () => {
     // API anahtarı kontrolü
-    const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+    const apiKey = (import.meta as any).env?.VITE_OPENAI_API_KEY;
     if (!apiKey || apiKey === 'your_openai_api_key_here') {
       setCurrentStep('api-setup');
     } else {

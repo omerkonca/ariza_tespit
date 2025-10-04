@@ -1,7 +1,7 @@
 import OpenAI from 'openai';
 
 // OpenAI API anahtarını environment variable'dan al
-const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
+const OPENAI_API_KEY = (import.meta as any).env?.VITE_OPENAI_API_KEY;
 
 // OpenAI client'ı oluştur
 const openai = new OpenAI({

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DiagnosisResult, VehicleInfo } from '../types';
 import { ArrowLeft, RefreshCw, AlertTriangle, CheckCircle, Clock, Zap } from 'lucide-react';
 
@@ -162,7 +162,7 @@ const DiagnosisResults: React.FC<DiagnosisResultsProps> = ({
         <div className="card">
           <h3 style={{ marginBottom: '16px' }}>Diğer Olası Arızalar</h3>
           <div className="grid">
-            {filteredResults.slice(1).map((result, index) => {
+            {filteredResults.slice(1).map((result) => {
               const urgencyInfo = getUrgencyInfo(result.problem.urgency);
               const UrgencyIcon = urgencyInfo.icon;
               

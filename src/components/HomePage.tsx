@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Car, Wrench, Zap, Shield, Clock, Users, Star, ArrowRight, Play, CheckCircle, TrendingUp, Award, MessageCircle } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Car, Wrench, Zap, Shield, Clock, Users, Star, ArrowRight, Play, CheckCircle, MessageCircle } from 'lucide-react';
 
 interface HomePageProps {
   onGetStarted: () => void;

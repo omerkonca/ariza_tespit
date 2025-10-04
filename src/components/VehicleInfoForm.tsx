@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { VehicleInfo } from '../types';
 import { Car, Calendar, Gauge, Fuel } from 'lucide-react';
 
@@ -8,8 +8,14 @@ interface VehicleInfoFormProps {
 
 const VehicleInfoForm: React.FC<VehicleInfoFormProps> = ({ onSubmit }) => {
   const [formData, setFormData] = useState<VehicleInfo>({
-    make: '',
-    model: '',
+    brandId: '',
+    brandName: '',
+    modelId: '',
+    modelName: '',
+    engineId: '',
+    engineName: '',
+    transmissionId: '',
+    transmissionName: '',
     year: new Date().getFullYear(),
     mileage: 0,
     fuelType: 'gasoline'
@@ -17,7 +23,7 @@ const VehicleInfoForm: React.FC<VehicleInfoFormProps> = ({ onSubmit }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.make && formData.model) {
+    if (formData.brandName && formData.modelName) {
       onSubmit(formData);
     }
   };
@@ -50,8 +56,8 @@ const VehicleInfoForm: React.FC<VehicleInfoFormProps> = ({ onSubmit }) => {
             <input
               id="make"
               type="text"
-              value={formData.make}
-              onChange={(e) => handleChange('make', e.target.value)}
+              value={formData.brandName}
+              onChange={(e) => handleChange('brandName', e.target.value)}
               placeholder="Örn: Toyota, Ford, BMW"
               required
             />
@@ -65,8 +71,8 @@ const VehicleInfoForm: React.FC<VehicleInfoFormProps> = ({ onSubmit }) => {
             <input
               id="model"
               type="text"
-              value={formData.model}
-              onChange={(e) => handleChange('model', e.target.value)}
+              value={formData.modelName}
+              onChange={(e) => handleChange('modelName', e.target.value)}
               placeholder="Örn: Corolla, Focus, 3 Series"
               required
             />

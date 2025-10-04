@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User, ArrowLeft, Trash2, Copy, Check, AlertCircle } from 'lucide-react';
 // import AIService from '../services/aiService';
 
@@ -53,7 +53,7 @@ const AIChat: React.FC<AIChatProps> = ({ onBack, vehicleInfo }) => {
     }
   }, [vehicleInfo, messages.length]);
 
-  const generateAIResponse = async (userMessage: string): Promise<string> => {
+  const generateAIResponse = async (): Promise<string> => {
     try {
       // Gerçek AI servisini kullan
       // const response = await aiService.generateResponse(userMessage, vehicleInfo || undefined);
@@ -83,7 +83,7 @@ const AIChat: React.FC<AIChatProps> = ({ onBack, vehicleInfo }) => {
     setError(null);
 
     try {
-      const aiResponse = await generateAIResponse(userMessage.content);
+      const aiResponse = await generateAIResponse();
       
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
