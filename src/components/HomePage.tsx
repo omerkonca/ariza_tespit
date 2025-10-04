@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Car, Wrench, Zap, Shield, Clock, Users, Star, ArrowRight, Play, CheckCircle, TrendingUp, Award } from 'lucide-react';
+import { Car, Wrench, Zap, Shield, Clock, Users, Star, ArrowRight, Play, CheckCircle, TrendingUp, Award, MessageCircle } from 'lucide-react';
 
 interface HomePageProps {
   onGetStarted: () => void;
+  onAIChat: () => void;
 }
 
-const HomePage: React.FC<HomePageProps> = ({ onGetStarted }) => {
+const HomePage: React.FC<HomePageProps> = ({ onGetStarted, onAIChat }) => {
   const [currentFeature, setCurrentFeature] = useState(0);
   const [stats, setStats] = useState({
     users: 0,
@@ -114,6 +115,10 @@ const HomePage: React.FC<HomePageProps> = ({ onGetStarted }) => {
                 <Car size={20} style={{ marginRight: '8px' }} />
                 Hemen Başla
                 <ArrowRight size={20} style={{ marginLeft: '8px' }} />
+              </button>
+              <button className="btn-secondary" onClick={onAIChat}>
+                <MessageCircle size={20} style={{ marginRight: '8px' }} />
+                Yapay Zekaya Sor
               </button>
               <button className="btn-secondary">
                 <Play size={20} style={{ marginRight: '8px' }} />
@@ -293,17 +298,75 @@ const HomePage: React.FC<HomePageProps> = ({ onGetStarted }) => {
         </div>
       </section>
 
+      {/* AI Chat Section */}
+      <section className="ai-chat-section">
+        <div className="container">
+          <div className="ai-chat-content">
+            <div className="ai-chat-text">
+              <h2>Yapay Zeka Asistanı ile Konuşun</h2>
+              <p>
+                Aracınızla ilgili herhangi bir sorunuz mu var? Yapay zeka asistanımız 
+                7/24 size yardımcı olmaya hazır. Doğal dil ile sorularınızı sorun, 
+                anında yanıt alın.
+              </p>
+              <div className="ai-features">
+                <div className="ai-feature">
+                  <MessageCircle size={20} />
+                  <span>Anında Yanıt</span>
+                </div>
+                <div className="ai-feature">
+                  <Zap size={20} />
+                  <span>7/24 Hizmet</span>
+                </div>
+                <div className="ai-feature">
+                  <Shield size={20} />
+                  <span>Uzman Bilgisi</span>
+                </div>
+              </div>
+              <button className="btn-primary" onClick={onAIChat}>
+                <MessageCircle size={20} style={{ marginRight: '8px' }} />
+                Yapay Zekaya Sor
+                <ArrowRight size={20} style={{ marginLeft: '8px' }} />
+              </button>
+            </div>
+            <div className="ai-chat-visual">
+              <div className="chat-preview">
+                <div className="chat-message user">
+                  <div className="message-avatar">U</div>
+                  <div className="message-text">Aracımın motoru çalışmıyor, ne yapmalıyım?</div>
+                </div>
+                <div className="chat-message ai">
+                  <div className="message-avatar">AI</div>
+                  <div className="message-text">Motor çalışmama sorunu için öncelikle akü voltajını kontrol edin...</div>
+                </div>
+                <div className="typing-indicator">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="cta-section">
         <div className="container">
           <div className="cta-content">
             <h2>Hemen Başlayın!</h2>
             <p>Aracınızın arızasını tespit etmek için sadece birkaç dakika yeterli</p>
-            <button className="btn-primary btn-large" onClick={onGetStarted}>
-              <Car size={24} style={{ marginRight: '12px' }} />
-              Ücretsiz Teşhis Yap
-              <ArrowRight size={24} style={{ marginLeft: '12px' }} />
-            </button>
+            <div className="cta-buttons">
+              <button className="btn-primary btn-large" onClick={onGetStarted}>
+                <Car size={24} style={{ marginRight: '12px' }} />
+                Ücretsiz Teşhis Yap
+                <ArrowRight size={24} style={{ marginLeft: '12px' }} />
+              </button>
+              <button className="btn-secondary btn-large" onClick={onAIChat}>
+                <MessageCircle size={24} style={{ marginRight: '12px' }} />
+                Yapay Zekaya Sor
+              </button>
+            </div>
           </div>
         </div>
       </section>

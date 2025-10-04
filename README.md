@@ -32,12 +32,20 @@ cd ariza_tespit
 npm install
 ```
 
-3. Geliştirme sunucusunu başlatın:
+3. OpenAI API anahtarını ayarlayın:
+   - OpenAI hesabınızda API anahtarı oluşturun: https://platform.openai.com/api-keys
+   - Proje kök dizininde `.env` dosyası oluşturun
+   - `.env` dosyasına şunu ekleyin:
+   ```
+   VITE_OPENAI_API_KEY=your_actual_api_key_here
+   ```
+
+4. Geliştirme sunucusunu başlatın:
 ```bash
 npm run dev
 ```
 
-4. Tarayıcınızda `http://localhost:3000` adresini açın.
+5. Tarayıcınızda `http://localhost:3000` adresini açın.
 
 ## 📱 Kullanım
 
