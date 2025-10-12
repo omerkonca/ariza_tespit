@@ -18,6 +18,8 @@ Modern web teknolojileri kullanılarak geliştirilmiş, araç arızalarını tes
 - **Vite** - Hızlı geliştirme ortamı
 - **Lucide React** - Modern ikonlar
 - **CSS3** - Responsive tasarım
+- 
+<img width="1891" height="882" alt="image" src="https://github.com/user-attachments/assets/c1375e33-cb4d-468f-934b-602e648d84c9" />
 
 ## 🚀 Kurulum
 
@@ -113,3 +115,4 @@ Bu proje MIT lisansı altında lisanslanmıştır.
 ## 📞 İletişim
 
 Sorularınız için issue açabilir veya iletişime geçebilirsiniz.
+
